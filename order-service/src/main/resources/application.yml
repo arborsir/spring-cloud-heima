@@ -34,6 +34,10 @@ logging:
 #userservice:
 #  ribbon:
 #    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+# 将IRule设置为NacosRule，这个规则会优先寻找与自己同集群的服务
+userservice:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
 ribbon:
   eager-load:
     # 开启饥饿加载
