@@ -13,6 +13,9 @@ spring:
     nacos:
       # nacos的服务地址，这里是默认的8848，如果变了要修改
       server-addr: localhost:8848
+      discovery:
+        # 集群名称，可以自定义，这里假设是杭州
+        cluster-name: HZ
 mybatis:
   type-aliases-package: cn.itcast.user.pojo
   configuration:
@@ -28,9 +31,9 @@ logging:
 #      # eureka的地址信息，现在是单机，如果多的话用逗号隔开
 #      defaultZone: http://127.0.0.1:10086/eureka
 # 修改负载均衡规则，只修改某一个服务的规则，不同服务，可以不同规则
-userservice:
-  ribbon:
-    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+#userservice:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
 ribbon:
   eager-load:
     # 开启饥饿加载

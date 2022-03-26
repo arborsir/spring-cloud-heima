@@ -13,6 +13,9 @@ spring:
     nacos:
       # nacos的服务地址，这里是默认的8848，如果变了要修改
       server-addr: localhost:8848
+      discovery:
+        # 集群名称，可以自定义，这里假设是杭州
+        cluster-name: HZ
 mybatis:
   type-aliases-package: cn.itcast.user.pojo
   configuration:
