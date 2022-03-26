@@ -29,13 +29,13 @@ public class OrderApplication {
         return new RestTemplate();
     }
 
-    /**
-     * 修改负载均衡策略
-     * 使用随机选择一个可用服务器
-     */
-    @Bean
-    public IRule randomRule() {
-        return new RandomRule();
-    }
+//    /**
+//     * 修改负载均衡策略
+//     * 使用随机选择一个可用服务器
+//     */
+//    @Bean
+//    public IRule randomRule() {
+//        return new RandomRule();
+//    }
 
 }
