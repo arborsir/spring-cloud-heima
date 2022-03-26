@@ -12,10 +12,17 @@ public class OrderService {
 
     @Autowired
     private OrderMapper orderMapper;
+    @Autowired
+    private RestTemplate restTemplate;
 
     public Order queryOrderById(Long orderId) {
         // 1.查询订单
         Order order = orderMapper.findById(orderId);
+        // 2. 使用RestTemplate发起Http请求
+        String url = "http://localhost:8081/user/" + order.getUserId();
+        User user = restTemplate.getForObject(url, User.class);
+        // 3. 封装user到order对象
+        order.setUser(user);
         // 4.返回
         return order;
     }
