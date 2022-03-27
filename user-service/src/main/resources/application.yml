@@ -31,3 +31,5 @@ logging:
 #    service-url:
 #      # eureka的地址信息，现在是单机，如果多的话用逗号隔开
 #      defaultZone: http://127.0.0.1:10086/eureka
+pattern:
+  name: 本地环境local
