@@ -1,0 +1,15 @@
+spring:
+  application:
+    # 服务名
+    name: userservice
+  profiles:
+    # 环境名
+    active: dev
+  cloud:
+    nacos:
+      # nacos地址
+      server-addr: localhost:8848
+      config:
+        # 文件后缀名
+        file-extension: yaml
+# 服务名+环境名.文件后缀名 = DataId
