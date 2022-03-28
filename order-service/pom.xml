@@ -45,8 +45,9 @@
 
         <!-- http client -->
         <dependency>
-            <groupId>io.github.openfeign</groupId>
-            <artifactId>feign-httpclient</artifactId>
+            <groupId>cn.itcast.demo</groupId>
+            <artifactId>feign-api</artifactId>
+            <version>1.0</version>
         </dependency>
 
     </dependencies>

@@ -1,3 +1,4 @@
 /user-service/target/
 /order-service/target/
 /eureka-server/target/
+/feign-api/target/

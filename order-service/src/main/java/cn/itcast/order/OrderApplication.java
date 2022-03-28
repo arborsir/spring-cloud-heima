@@ -1,6 +1,8 @@
 package cn.itcast.order;
 
-import cn.itcast.order.config.FeignConfiguration;
+//import cn.itcast.order.config.FeignConfiguration;
+import cn.itcast.feign.clients.UserClient;
+import cn.itcast.feign.config.FeignConfiguration;
 import com.netflix.loadbalancer.IRule;
 import com.netflix.loadbalancer.RandomRule;
 import org.mybatis.spring.annotation.MapperScan;
@@ -15,7 +17,11 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 // 配置feign的日志级别，加在启动类是全局有效
 //@EnableFeignClients(defaultConfiguration = FeignConfiguration.class)
-@EnableFeignClients
+// 配置FeignClient所在的包
+//@EnableFeignClients(basePackages = "cn.itcast.feign.clients")
+// 配置FeignClient所需要的字节码，是一个数组
+@EnableFeignClients(clients = {UserClient.class})
+//@EnableFeignClients
 public class OrderApplication {
 
     public static void main(String[] args) {
