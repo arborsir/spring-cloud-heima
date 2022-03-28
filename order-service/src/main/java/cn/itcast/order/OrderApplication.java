@@ -1,5 +1,6 @@
 package cn.itcast.order;
 
+import cn.itcast.order.config.FeignConfiguration;
 import com.netflix.loadbalancer.IRule;
 import com.netflix.loadbalancer.RandomRule;
 import org.mybatis.spring.annotation.MapperScan;
@@ -12,6 +13,8 @@ import org.springframework.web.client.RestTemplate;
 
 @MapperScan("cn.itcast.order.mapper")
 @SpringBootApplication
+// 配置feign的日志级别，加在启动类是全局有效
+//@EnableFeignClients(defaultConfiguration = FeignConfiguration.class)
 @EnableFeignClients
 public class OrderApplication {
 
